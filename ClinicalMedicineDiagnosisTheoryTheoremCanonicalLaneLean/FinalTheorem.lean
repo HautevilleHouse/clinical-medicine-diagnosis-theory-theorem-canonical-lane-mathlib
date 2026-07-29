@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ClinicalMedicineDiagnosisTheoryTheoremCanonicalLaneLean.DiagnosticModeling
+import HautevilleHouse.ClinicalMedicineDiagnosisTheoryTheoremCanonicalLaneLean.ClinicalEvidenceSynthesis
+import HautevilleHouse.ClinicalMedicineDiagnosisTheoryTheoremCanonicalLaneLean.DiagnosticTestEvaluation
+import HautevilleHouse.ClinicalMedicineDiagnosisTheoryTheoremCanonicalLaneLean.ClinicalDecisionRule
+
+namespace HautevilleHouse
+namespace ClinicalMedicineDiagnosisTheoryTheoremCanonicalLaneLean
+
+def ConstrainedDiagnosisTheoryClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_diagnosis_theory_endgame (A : AdmissibleClass) : ConstrainedDiagnosisTheoryClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ClinicalMedicineDiagnosisTheoryTheoremCanonicalLaneLean
+end HautevilleHouse
